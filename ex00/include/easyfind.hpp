@@ -6,7 +6,7 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 15:45:49 by paulmart          #+#    #+#             */
-/*   Updated: 2025/06/04 16:09:16 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/06/05 11:12:06 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 class NoOccurenceFound : public std::exception
 {
@@ -27,11 +28,12 @@ class NoOccurenceFound : public std::exception
 };
 
 template <typename T>
-int	easyfind(const T container, int n)
+typename T::const_iterator	easyfind(const T &container, int n)
 {
-	if (std::find(container.begin(), container.end(), n) == container.end())
+	typename T::const_iterator it = std::find(container.begin(), container.end(), n);
+	if (it == container.end())
 		throw NoOccurenceFound();
-	return (std::distance(container.begin, n));
+	return (it);
 }
 
 #endif
