@@ -6,7 +6,7 @@
 /*   By: paulmart <paulmart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 11:17:19 by paulmart          #+#    #+#             */
-/*   Updated: 2025/06/05 15:12:00 by paulmart         ###   ########.fr       */
+/*   Updated: 2025/06/11 11:06:44 by paulmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(void)
 	try
 	{
 		std::cout << "\n\t --Test 4--\n";
-		Span test(100000);
+		Span test(10000);
 		test.addRandNumber(10000);
 		std::cout << test.longestSpan() << std::endl;
 		std::cout << test.shortestSpan() << std::endl;
